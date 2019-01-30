@@ -1,0 +1,57 @@
+﻿The child selector ( class and pseudo-classes)
+tr.result_row:not(:last-child) > td {
+    border-bottom: 1px solid black;
+}
+
+tr.result_row > td:not(:last-child) {
+    border-right: 1px solid black;
+}
+
+footer {
+    margin-top: 25px;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+    color: rgba(0, 0, 0, 0.7);
+    font-size: 14px;
+}
+
+#img-holder {
+    width: 48%;
+    float: left;
+}
+
+#last-results {
+    width: 48%;
+    float: right;
+    margin-bottom: 5px;
+}
+
+#last-results-inner {
+    height: calc(100% - 18px);
+    overflow: auto;
+}
+
+#results-log-table {
+    min-width: 250px;
+}
+
+@media(max-width: 500px) {
+    #img-holder {
+        width: 100%;
+        float: none;
+    }
+
+    #last-results {
+        width: 100%;
+        float: none;
+        max-height: 100px;
+    }
+}
+
+#plot-canvas {
+    width: 100%;
+    border: 1px solid black;
+}
+
+#results-holder-outer {
+    text-align: center;
+}

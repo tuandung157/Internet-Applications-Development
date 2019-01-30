@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+	<meta charset="UTF-8" />
+	<title>Лабораторная работа 1</title>
+    <link rel="stylesheet" type="text/css" href="css/style.css" />
+    <link rel="stylesheet" type="text/css" href="css/style-index.css" />
+</head>
+
+<body>
+	<main>
+        <header>
+               <h1> Le Tuan Dung P3200 <br>
+            Вариант 18011</h1>
+        </header>
+
+        
+
+        <h1>Check points</h1>
+
+		<form id="check_form" action="point_check.php" method="get">
+
+
+			coor X:
+			<input type="hidden" id="coord_x" name="coord_x" value="0" />
+			<button type="button" id="btn_sub" class="offset-top">-</button>
+			<span id="coord_x_display" class="offset-top">0</span>
+			<button type="button" id="btn_add" class="offset-top">+</button>
+            <br>
+
+
+			coor Y:
+			<input type="text" id="coord_y" name="coord_y" maxlength="7" placeholder="(-5; 5)" required />
+            <br>
+
+			<fieldset id="r_value_fieldset">
+				<legend>Radian R:</legend>
+				<label><input type="radio" name="r_value" value="1" /> 1 </label> <br>
+				<label><input type="radio" name="r_value" value="1.5" /> 1.5 </label><br>
+				<label><input type="radio" name="r_value" value="2" /> 2 </label><br>
+				<label><input type="radio" name="r_value" value="2.5" /> 2.5 </label><br>
+				<label><input type="radio" name="r_value" value="3" /> 3 </label><br>
+
+			</fieldset>
+
+            <span id="error_msg" class="offset-top">Тут текст ошибки <br></span>
+
+            <button type="button" id="btn_check" class="offset-top">I want to Check</button>
+		</form>
+
+        <div id="img-holder">
+            <img id="img-inner" src="img/task.png" />
+        </div>
+	</main>
+    <script type="text/javascript" src="js/browser-support.js"></script>
+    <script type="text/javascript" src="js/index.js"></script>
+</body>
+</html>

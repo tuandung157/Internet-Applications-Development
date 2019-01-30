@@ -1,0 +1,65 @@
+﻿body {
+    font-size: 17px; /* inherit*/
+    background-image: url('../img/bg2.jpg');
+    background-repeat: no-repeat;
+}
+
+@media (min-width: 1101px) {
+    body {
+        background-size: 100%;
+    }
+}
+
+@media (max-width: 1100px) {
+    body {
+        background-size: stretch;
+    }
+}
+
+@media (min-width: 800px) {
+    header {
+        text-align: center;
+    }
+
+    main {
+        position: absolute;
+        left: 23%;
+        right: 23%;
+        float: left;
+        font-size: inherit; /* Inheritance */
+    }
+}
+
+main {
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: 5px;
+    padding: 8px;
+}
+
+a {
+    color: blue;
+}
+
+/* Pseudo-class selector */
+a:hover {
+    color: orange;
+}
+
+header {
+    font-family: monospace;
+    color: black;
+    font-size: 15px;
+}
+
+footer {
+    clear: both;
+}
+
+/* selector class */
+.bordered {
+    border: 1px solid black;
+}
+
+.stretch {
+    width: 100%;
+}

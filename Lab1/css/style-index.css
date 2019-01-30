@@ -1,0 +1,21 @@
+﻿
+#error_msg {
+    color: rgb(210, 0, 0);
+    display: none;
+}
+
+input, .offset-top {
+    margin-top: 3px; /* thut le */
+}
+
+#img-holder {
+    text-align: center;
+}
+
+#img-inner {
+    width: 50%;
+}
+
+#coord_x_fieldset {
+    column-count: 3;
+}
