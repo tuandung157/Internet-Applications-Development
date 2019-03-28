@@ -3,10 +3,10 @@
 <hibernate-configuration>
     <session-factory>
         <property name="hibernate.dialect">org.hibernate.dialect.PostgreSQLDialect</property>
-        <property name="hibernate.connection.driver_class">org.postgresql.Drive</property>
-        <property name="hibernate.connection.url">jdbc:postgresql://localhost:63333/studs</property>
-        <property name="hibernate.connection.username">s247407</property>
-        <property name="hibernate.connection.password">hat507</property>
+        <property name="hibernate.connection.driver_class">oracle.jdbc.driver.OracleDriver</property>
+        <property name="hibernate.connection.url">jdbc:oracle:thin:@//localhost:1521/oracle</property>
+        <property name="hibernate.connection.username">SYSTEM</property>
+        <property name="hibernate.connection.password">Ltd1571997</property>
         <mapping resource="ValueXYRFromForm.hbm.xml"/>
     </session-factory>
 </hibernate-configuration>

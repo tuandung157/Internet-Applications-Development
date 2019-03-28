@@ -175,18 +175,11 @@ function clickCanvas(){
         //     alert(x);
         drawPoint(x, y, r);
         //     document.getElementById('form:validationButton').click();
-        //     drawAllPoints();
-
         document.getElementById('newXYR:y').value=y;
         document.getElementById('newXYR:x').value=x;
 
         document.getElementById("newXYR:check").click();
-        // var request = new XMLHttpRequest();
-        // request.open("POST", "http://localhost:8080/Drop_war_exploded/main.xhtml");
-        // request.onreadystatechange = function (){
-        //     alert("lol");
-        // }
-        // request.send("newXYR: newXYR&newXYR:x:=1&newXYR:y:=1&newXYR:r:=2&newXYR:j_idt24:=Check&javax.faces.ViewState:=6185241858636643211:-2645044552540146115");
+
     }
 }
 

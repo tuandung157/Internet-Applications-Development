@@ -1,20 +1,21 @@
-import com.jcraft.jsch.JSch;
-import com.jcraft.jsch.JSchException;
-import com.jcraft.jsch.Session;
+//import com.jcraft.jsch.JSch;
+//import com.jcraft.jsch.JSchException;
+//import com.jcraft.jsch.Session;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 import javax.faces.bean.ManagedBean;
+import org.hibernate.Session;
 
 @ManagedBean(name="lolybean", eager=true)
 @javax.faces.bean.SessionScoped
 public class LolyBean
 {
-//    static
-//    {
+    static {
+        //for helios
 //        String strSshUser = "s247407";
 //        String strSshPassword = "hat507";
-//        String strSshHost = "se.ifmo.ru";
+//        String strSshHost = "helios.se.ifmo.ru";
 //        int nSshPort = 2222;
 //        String strRemoteHost = "pg";
 //        int nLocalPort = 63333;
@@ -36,8 +37,10 @@ public class LolyBean
 //        } catch (JSchException e) {
 //            e.printStackTrace();
 //        }
-//    }
+            Session session = HibernateUtil.getSessionFactory().openSession();
+            session.beginTransaction();
 
+    }
 
     private ValueXYRFromForm values = new ValueXYRFromForm();
     private List<ValueXYRFromForm> list_with_values = new ArrayList();

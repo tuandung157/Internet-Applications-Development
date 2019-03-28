@@ -20,7 +20,7 @@
         start program!!
     </div>
     <div id="content">
-        <div id="time"></div>
+        <div id="time"/>
         <div class="program">
             <div id="canvaForm">
                 <canvas id="canvas" onclick="clickCanvas()" style="background-color:#ffffff; border-radius: 20px;" width="300" height="300"/>
@@ -83,7 +83,7 @@
 
                     <div>
                         <h:commandButton id="check" class="check" value="Check" action="#{lolybean.addXYR}">
-                            <f:ajax execute="newXYR" render=":XYRTable"/>
+                            <f:ajax execute="newXYR" render="XYRTable"/>
                         </h:commandButton>
                     </div>
                 </h:form>

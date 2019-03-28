@@ -1,5 +1,5 @@
 <hibernate-mapping>
-    <class name="ValueXYRFromForm" table="XYR">
+    <class name="ValueXYRFromForm" table="XYRTable">
         <!--<property column="x" name="x" type="java.lang.Long"/>-->
         <!--<id name="id"/>-->
 
@@ -12,7 +12,7 @@
         <property column="y" name="y" type="java.lang.Float"/>
         <property column="r" name="r" type="java.lang.Float"/>
         <property column="result" name="result" type="java.lang.Boolean"/>
-        <property column="time_now" name="time_now" type="java.sql.Time"/>
+        <property column="time_now" name="time_now" type="java.sql.Timestamp"/>
         <!--<property column="time_work" name="time_work" type="java.lang.Long"/>-->
 
     </class>

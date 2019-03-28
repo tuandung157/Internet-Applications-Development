@@ -2,6 +2,8 @@
   <library name="hibernate-core-4.3.11.Final">
     <CLASSES>
       <root url="jar://$PROJECT_DIR$/../libforall/hibernate/hibernate-core-4.3.11.Final.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../libforall/postgresql-42.2.5.jre6.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../libforall/ojdbc8-full/ojdbc8.jar!/" />
     </CLASSES>
     <JAVADOC />
     <SOURCES />

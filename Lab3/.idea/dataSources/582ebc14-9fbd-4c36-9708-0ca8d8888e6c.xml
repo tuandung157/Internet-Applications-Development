@@ -9,7 +9,7 @@
       <Comment>default administrative connection database</Comment>
       <StateNumber>540</StateNumber>
       <Owner>postgres</Owner>
-      <IntrospectionStateNumber>29346977</IntrospectionStateNumber>
+      <IntrospectionStateNumber>29352900</IntrospectionStateNumber>
       <Current>1</Current>
       <Visible>1</Visible>
       <Relations>sequence|table|17331|17328|1
@@ -19,7 +19,7 @@ sequence|table|1084570|1084572|1
 sequence|table|1084594|1084596|1
 sequence|table|1084605|1084607|1
 sequence|table|1123039|1123041|1
-sequence|table|1189075|1189077|1
+sequence|table|1194958|1194960|1
 </Relations>
     </database>
     <database id="3" parent="1" name="studs">
@@ -9966,7 +9966,7 @@ sequence|table|1189075|1189077|1
       <Comment>standard public schema</Comment>
       <StateNumber>339</StateNumber>
       <Owner>postgres</Owner>
-      <IntrospectionStateNumber>29346978</IntrospectionStateNumber>
+      <IntrospectionStateNumber>29352901</IntrospectionStateNumber>
       <Current>1</Current>
       <Visible>1</Visible>
     </schema>
@@ -10066,10 +10066,10 @@ sequence|table|1189075|1189077|1
       <Owner>s243893</Owner>
       <StateNumber>29200616</StateNumber>
     </sequence>
-    <sequence id="1441" parent="1425" name="points_pointid_seq">
-      <ObjectId>1189075</ObjectId>
+    <sequence id="1441" parent="1425" name="points_id_seq">
+      <ObjectId>1194958</ObjectId>
       <Owner>s247407</Owner>
-      <StateNumber>29346976</StateNumber>
+      <StateNumber>29352897</StateNumber>
       <SequenceIdentity>1</SequenceIdentity>
       <CacheSize>1</CacheSize>
     </sequence>
@@ -10144,9 +10144,9 @@ sequence|table|1189075|1189077|1
       <StateNumber>29200620</StateNumber>
     </table>
     <table id="1456" parent="1425" name="points">
-      <ObjectId>1189077</ObjectId>
+      <ObjectId>1194960</ObjectId>
       <Owner>s247407</Owner>
-      <StateNumber>29346976</StateNumber>
+      <StateNumber>29352897</StateNumber>
     </table>
     <table id="1457" parent="1425" name="publications">
       <ObjectId>1084607</ObjectId>
@@ -10915,56 +10915,63 @@ user_id</ColNames>
       <ColNames>login</ColNames>
       <UnderlyingIndexName>uk_t4eia77onyvbvv4742ke4ylqc</UnderlyingIndexName>
     </key>
-    <column id="1570" parent="1456" name="pointid">
+    <column id="1570" parent="1456" name="id">
       <Position>1</Position>
       <DataType>integer|0s</DataType>
       <NotNull>1</NotNull>
-      <StateNumber>29346976</StateNumber>
-      <DefaultExpression>nextval(&apos;points_pointid_seq&apos;::regclass)</DefaultExpression>
+      <StateNumber>29352897</StateNumber>
+      <DefaultExpression>nextval(&apos;points_id_seq&apos;::regclass)</DefaultExpression>
       <TypeId>23</TypeId>
     </column>
-    <column id="1571" parent="1456" name="valuex">
+    <column id="1571" parent="1456" name="x">
       <Position>2</Position>
       <DataType>double precision|0s</DataType>
       <NotNull>1</NotNull>
-      <StateNumber>29346976</StateNumber>
+      <StateNumber>29352897</StateNumber>
       <TypeId>701</TypeId>
     </column>
-    <column id="1572" parent="1456" name="valuey">
+    <column id="1572" parent="1456" name="y">
       <Position>3</Position>
       <DataType>double precision|0s</DataType>
       <NotNull>1</NotNull>
-      <StateNumber>29346976</StateNumber>
+      <StateNumber>29352897</StateNumber>
       <TypeId>701</TypeId>
     </column>
-    <column id="1573" parent="1456" name="valuer">
+    <column id="1573" parent="1456" name="r">
       <Position>4</Position>
       <DataType>double precision|0s</DataType>
       <NotNull>1</NotNull>
-      <StateNumber>29346976</StateNumber>
+      <StateNumber>29352897</StateNumber>
       <TypeId>701</TypeId>
     </column>
-    <column id="1574" parent="1456" name="checked">
+    <column id="1574" parent="1456" name="result">
       <Position>5</Position>
       <DataType>boolean|0s</DataType>
       <NotNull>1</NotNull>
-      <StateNumber>29346976</StateNumber>
+      <StateNumber>29352897</StateNumber>
       <TypeId>16</TypeId>
     </column>
-    <index id="1575" parent="1456" name="points_pkey">
-      <ObjectId>1189081</ObjectId>
-      <StateNumber>29346976</StateNumber>
-      <ColNames>pointid</ColNames>
+    <column id="1575" parent="1456" name="time_now">
+      <Position>6</Position>
+      <DataType>time|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>29352897</StateNumber>
+      <TypeId>1083</TypeId>
+    </column>
+    <index id="1576" parent="1456" name="points_pkey">
+      <ObjectId>1194964</ObjectId>
+      <StateNumber>29352897</StateNumber>
+      <ColNames>id</ColNames>
       <Unique>1</Unique>
     </index>
-    <key id="1576" parent="1456" name="points_pkey">
-      <ObjectId>1189082</ObjectId>
-      <StateNumber>29346976</StateNumber>
-      <ColNames>pointid</ColNames>
+    <key id="1577" parent="1456" name="points_pkey">
+      <ObjectId>1194965</ObjectId>
+      <StateNumber>29352897</StateNumber>
+      <ColNames>id</ColNames>
       <UnderlyingIndexName>points_pkey</UnderlyingIndexName>
       <Primary>1</Primary>
     </key>
-    <column id="1577" parent="1457" name="id">
+    <column id="1578" parent="1457" name="id">
       <Position>1</Position>
       <DataType>bigint|0s</DataType>
       <NotNull>1</NotNull>
@@ -10972,99 +10979,99 @@ user_id</ColNames>
       <DefaultExpression>nextval(&apos;publications_id_seq&apos;::regclass)</DefaultExpression>
       <TypeId>20</TypeId>
     </column>
-    <column id="1578" parent="1457" name="creation_time">
+    <column id="1579" parent="1457" name="creation_time">
       <Position>2</Position>
       <DataType>timestamp|0s</DataType>
       <NotNull>1</NotNull>
       <StateNumber>28934756</StateNumber>
       <TypeId>1114</TypeId>
     </column>
-    <column id="1579" parent="1457" name="is_author_user_visible">
+    <column id="1580" parent="1457" name="is_author_user_visible">
       <Position>3</Position>
       <DataType>varchar(255)|0s</DataType>
       <StateNumber>28934756</StateNumber>
       <TypeId>1043</TypeId>
     </column>
-    <column id="1580" parent="1457" name="is_msg_read">
+    <column id="1581" parent="1457" name="is_msg_read">
       <Position>4</Position>
       <DataType>varchar(255)|0s</DataType>
       <StateNumber>28934756</StateNumber>
       <TypeId>1043</TypeId>
     </column>
-    <column id="1581" parent="1457" name="text">
+    <column id="1582" parent="1457" name="text">
       <Position>5</Position>
       <DataType>varchar(255)|0s</DataType>
       <StateNumber>28934756</StateNumber>
       <TypeId>1043</TypeId>
     </column>
-    <column id="1582" parent="1457" name="answered_publication_id">
+    <column id="1583" parent="1457" name="answered_publication_id">
       <Position>6</Position>
       <DataType>bigint|0s</DataType>
       <StateNumber>28934756</StateNumber>
       <TypeId>20</TypeId>
     </column>
-    <column id="1583" parent="1457" name="author_community_id">
+    <column id="1584" parent="1457" name="author_community_id">
       <Position>7</Position>
       <DataType>bigint|0s</DataType>
       <StateNumber>28934756</StateNumber>
       <TypeId>20</TypeId>
     </column>
-    <column id="1584" parent="1457" name="author_user_id">
+    <column id="1585" parent="1457" name="author_user_id">
       <Position>8</Position>
       <DataType>bigint|0s</DataType>
       <StateNumber>28934756</StateNumber>
       <TypeId>20</TypeId>
     </column>
-    <column id="1585" parent="1457" name="forwarded_msg_id">
+    <column id="1586" parent="1457" name="forwarded_msg_id">
       <Position>9</Position>
       <DataType>bigint|0s</DataType>
       <StateNumber>28934756</StateNumber>
       <TypeId>20</TypeId>
     </column>
-    <column id="1586" parent="1457" name="origin_chat_id">
+    <column id="1587" parent="1457" name="origin_chat_id">
       <Position>10</Position>
       <DataType>bigint|0s</DataType>
       <StateNumber>28934756</StateNumber>
       <TypeId>20</TypeId>
     </column>
-    <column id="1587" parent="1457" name="origin_community_id">
+    <column id="1588" parent="1457" name="origin_community_id">
       <Position>11</Position>
       <DataType>bigint|0s</DataType>
       <StateNumber>28934756</StateNumber>
       <TypeId>20</TypeId>
     </column>
-    <column id="1588" parent="1457" name="origin_post_id">
+    <column id="1589" parent="1457" name="origin_post_id">
       <Position>12</Position>
       <DataType>bigint|0s</DataType>
       <StateNumber>28934756</StateNumber>
       <TypeId>20</TypeId>
     </column>
-    <column id="1589" parent="1457" name="forwarded_msg_id_id">
+    <column id="1590" parent="1457" name="forwarded_msg_id_id">
       <Position>13</Position>
       <DataType>bigint|0s</DataType>
       <StateNumber>28934879</StateNumber>
       <TypeId>20</TypeId>
     </column>
-    <column id="1590" parent="1457" name="origin_community_id_id">
+    <column id="1591" parent="1457" name="origin_community_id_id">
       <Position>14</Position>
       <DataType>bigint|0s</DataType>
       <StateNumber>28934880</StateNumber>
       <TypeId>20</TypeId>
     </column>
-    <index id="1591" parent="1457" name="publications_pkey">
+    <index id="1592" parent="1457" name="publications_pkey">
       <ObjectId>1084614</ObjectId>
       <StateNumber>28934756</StateNumber>
       <ColNames>id</ColNames>
       <Unique>1</Unique>
     </index>
-    <key id="1592" parent="1457" name="publications_pkey">
+    <key id="1593" parent="1457" name="publications_pkey">
       <ObjectId>1084615</ObjectId>
       <StateNumber>28934756</StateNumber>
       <ColNames>id</ColNames>
       <UnderlyingIndexName>publications_pkey</UnderlyingIndexName>
       <Primary>1</Primary>
     </key>
-    <foreign-key id="1593" parent="1457" name="fk8x4pq4cc6xacmlqbnxqft27v0">
+    <foreign-key id="1594" parent="1457" name="fk8x4pq4cc6xacmlqbnxqft27v0">
       <ObjectId>1084688</ObjectId>
       <StateNumber>28934772</StateNumber>
       <ColNames>answered_publication_id</ColNames>
@@ -11074,7 +11081,7 @@ user_id</ColNames>
       <RefKeyName>publications_pkey</RefKeyName>
       <RefColNames>id</RefColNames>
     </foreign-key>
-    <foreign-key id="1594" parent="1457" name="fk27bta26q9ua1k89nf4b0v0lak">
+    <foreign-key id="1595" parent="1457" name="fk27bta26q9ua1k89nf4b0v0lak">
       <ObjectId>1084693</ObjectId>
       <StateNumber>28934773</StateNumber>
       <ColNames>author_community_id</ColNames>
@@ -11084,7 +11091,7 @@ user_id</ColNames>
       <RefKeyName>communities_pkey</RefKeyName>
       <RefColNames>id</RefColNames>
     </foreign-key>
-    <foreign-key id="1595" parent="1457" name="fk1o209f0vwahbgsa9ji8w4rx51">
+    <foreign-key id="1596" parent="1457" name="fk1o209f0vwahbgsa9ji8w4rx51">
       <ObjectId>1084698</ObjectId>
       <StateNumber>28934774</StateNumber>
       <ColNames>forwarded_msg_id</ColNames>
@@ -11094,7 +11101,7 @@ user_id</ColNames>
       <RefKeyName>publications_pkey</RefKeyName>
       <RefColNames>id</RefColNames>
     </foreign-key>
-    <foreign-key id="1596" parent="1457" name="fkp2qky3ghyaren3l3ahidbf2ib">
+    <foreign-key id="1597" parent="1457" name="fkp2qky3ghyaren3l3ahidbf2ib">
       <ObjectId>1084703</ObjectId>
       <StateNumber>28934775</StateNumber>
       <ColNames>origin_chat_id</ColNames>
@@ -11104,7 +11111,7 @@ user_id</ColNames>
       <RefKeyName>chats_pkey</RefKeyName>
       <RefColNames>id</RefColNames>
     </foreign-key>
-    <foreign-key id="1597" parent="1457" name="fknmt23o14ejc0k1trrq3gs0loe">
+    <foreign-key id="1598" parent="1457" name="fknmt23o14ejc0k1trrq3gs0loe">
       <ObjectId>1084708</ObjectId>
       <StateNumber>28934776</StateNumber>
       <ColNames>origin_community_id</ColNames>
@@ -11114,7 +11121,7 @@ user_id</ColNames>
       <RefKeyName>communities_pkey</RefKeyName>
       <RefColNames>id</RefColNames>
     </foreign-key>
-    <foreign-key id="1598" parent="1457" name="fk9w27a2ctkjxqkwmp7x7bjear0">
+    <foreign-key id="1599" parent="1457" name="fk9w27a2ctkjxqkwmp7x7bjear0">
       <ObjectId>1084713</ObjectId>
       <StateNumber>28934777</StateNumber>
       <ColNames>origin_post_id</ColNames>
@@ -11124,7 +11131,7 @@ user_id</ColNames>
       <RefKeyName>publications_pkey</RefKeyName>
       <RefColNames>id</RefColNames>
     </foreign-key>
-    <foreign-key id="1599" parent="1457" name="fk3hsv2gl49c5vui4qk9o93o2a3">
+    <foreign-key id="1600" parent="1457" name="fk3hsv2gl49c5vui4qk9o93o2a3">
       <ObjectId>1085008</ObjectId>
       <StateNumber>28934885</StateNumber>
       <ColNames>forwarded_msg_id_id</ColNames>
@@ -11134,7 +11141,7 @@ user_id</ColNames>
       <RefKeyName>publications_pkey</RefKeyName>
       <RefColNames>id</RefColNames>
     </foreign-key>
-    <foreign-key id="1600" parent="1457" name="fkr6mdfrqgsv1184tyqt4xbfh73">
+    <foreign-key id="1601" parent="1457" name="fkr6mdfrqgsv1184tyqt4xbfh73">
       <ObjectId>1085013</ObjectId>
       <StateNumber>28934886</StateNumber>
       <ColNames>origin_community_id_id</ColNames>
@@ -11144,42 +11151,42 @@ user_id</ColNames>
       <RefKeyName>communities_pkey</RefKeyName>
       <RefColNames>id</RefColNames>
     </foreign-key>
-    <column id="1601" parent="1458" name="is_up">
+    <column id="1602" parent="1458" name="is_up">
       <Position>1</Position>
       <DataType>varchar(255)|0s</DataType>
       <NotNull>1</NotNull>
       <StateNumber>28934757</StateNumber>
       <TypeId>1043</TypeId>
     </column>
-    <column id="1602" parent="1458" name="time">
+    <column id="1603" parent="1458" name="time">
       <Position>2</Position>
       <DataType>timestamp|0s</DataType>
       <NotNull>1</NotNull>
       <StateNumber>28934757</StateNumber>
       <TypeId>1114</TypeId>
     </column>
-    <column id="1603" parent="1458" name="publication_id">
+    <column id="1604" parent="1458" name="publication_id">
       <Position>3</Position>
       <DataType>bigint|0s</DataType>
       <NotNull>1</NotNull>
       <StateNumber>28934757</StateNumber>
       <TypeId>20</TypeId>
     </column>
-    <column id="1604" parent="1458" name="user_id">
+    <column id="1605" parent="1458" name="user_id">
       <Position>4</Position>
       <DataType>bigint|0s</DataType>
       <NotNull>1</NotNull>
       <StateNumber>28934757</StateNumber>
       <TypeId>20</TypeId>
     </column>
-    <index id="1605" parent="1458" name="ratings_pkey">
+    <index id="1606" parent="1458" name="ratings_pkey">
       <ObjectId>1084619</ObjectId>
       <StateNumber>28934757</StateNumber>
       <ColNames>publication_id
 user_id</ColNames>
       <Unique>1</Unique>
     </index>
-    <key id="1606" parent="1458" name="ratings_pkey">
+    <key id="1607" parent="1458" name="ratings_pkey">
       <ObjectId>1084620</ObjectId>
       <StateNumber>28934757</StateNumber>
       <ColNames>publication_id
@@ -11187,105 +11194,105 @@ user_id</ColNames>
       <UnderlyingIndexName>ratings_pkey</UnderlyingIndexName>
       <Primary>1</Primary>
     </key>
-    <column id="1607" parent="1459" name="seq_name">
+    <column id="1608" parent="1459" name="seq_name">
       <Position>1</Position>
       <DataType>varchar(50)|0s</DataType>
       <NotNull>1</NotNull>
       <StateNumber>29199868</StateNumber>
       <TypeId>1043</TypeId>
     </column>
-    <column id="1608" parent="1459" name="seq_count">
+    <column id="1609" parent="1459" name="seq_count">
       <Position>2</Position>
       <DataType>numeric(38)|0s</DataType>
       <StateNumber>29199868</StateNumber>
       <TypeId>1700</TypeId>
     </column>
-    <index id="1609" parent="1459" name="sequence_pkey">
+    <index id="1610" parent="1459" name="sequence_pkey">
       <ObjectId>1122620</ObjectId>
       <StateNumber>29199868</StateNumber>
       <ColNames>seq_name</ColNames>
       <Unique>1</Unique>
     </index>
-    <key id="1610" parent="1459" name="sequence_pkey">
+    <key id="1611" parent="1459" name="sequence_pkey">
       <ObjectId>1122621</ObjectId>
       <StateNumber>29199868</StateNumber>
       <ColNames>seq_name</ColNames>
       <UnderlyingIndexName>sequence_pkey</UnderlyingIndexName>
       <Primary>1</Primary>
     </key>
-    <column id="1611" parent="1460" name="ip">
+    <column id="1612" parent="1460" name="ip">
       <Position>1</Position>
       <DataType>bytea|0s</DataType>
       <NotNull>1</NotNull>
       <StateNumber>28934758</StateNumber>
       <TypeId>17</TypeId>
     </column>
-    <column id="1612" parent="1460" name="comment">
+    <column id="1613" parent="1460" name="comment">
       <Position>2</Position>
       <DataType>varchar(255)|0s</DataType>
       <StateNumber>28934758</StateNumber>
       <TypeId>1043</TypeId>
     </column>
-    <column id="1613" parent="1460" name="time">
+    <column id="1614" parent="1460" name="time">
       <Position>3</Position>
       <DataType>timestamp|0s</DataType>
       <NotNull>1</NotNull>
       <StateNumber>28934758</StateNumber>
       <TypeId>1114</TypeId>
     </column>
-    <column id="1614" parent="1460" name="user_id">
+    <column id="1615" parent="1460" name="user_id">
       <Position>4</Position>
       <DataType>bigint|0s</DataType>
       <NotNull>1</NotNull>
       <StateNumber>28934758</StateNumber>
       <TypeId>20</TypeId>
     </column>
-    <column id="1615" parent="1460" name="begin_time">
+    <column id="1616" parent="1460" name="begin_time">
       <Position>5</Position>
       <DataType>timestamp|0s</DataType>
       <NotNull>1</NotNull>
       <StateNumber>28934758</StateNumber>
       <TypeId>1114</TypeId>
     </column>
-    <column id="1616" parent="1460" name="end_time">
+    <column id="1617" parent="1460" name="end_time">
       <Position>6</Position>
       <DataType>timestamp|0s</DataType>
       <StateNumber>28934758</StateNumber>
       <TypeId>1114</TypeId>
     </column>
-    <column id="1617" parent="1460" name="last_seen">
+    <column id="1618" parent="1460" name="last_seen">
       <Position>7</Position>
       <DataType>timestamp|0s</DataType>
       <NotNull>1</NotNull>
       <StateNumber>28934758</StateNumber>
       <TypeId>1114</TypeId>
     </column>
-    <column id="1618" parent="1460" name="location">
+    <column id="1619" parent="1460" name="location">
       <Position>8</Position>
       <DataType>varchar(255)|0s</DataType>
       <StateNumber>28934758</StateNumber>
       <TypeId>1043</TypeId>
     </column>
-    <column id="1619" parent="1460" name="token">
+    <column id="1620" parent="1460" name="token">
       <Position>9</Position>
       <DataType>varchar(255)|0s</DataType>
       <StateNumber>28934758</StateNumber>
       <TypeId>1043</TypeId>
     </column>
-    <column id="1620" parent="1460" name="user_agent">
+    <column id="1621" parent="1460" name="user_agent">
       <Position>10</Position>
       <DataType>varchar(255)|0s</DataType>
       <StateNumber>28934758</StateNumber>
       <TypeId>1043</TypeId>
     </column>
-    <index id="1621" parent="1460" name="sessions_pkey">
+    <index id="1622" parent="1460" name="sessions_pkey">
       <ObjectId>1084627</ObjectId>
       <StateNumber>28934758</StateNumber>
       <ColNames>ip
 user_id</ColNames>
       <Unique>1</Unique>
     </index>
-    <key id="1622" parent="1460" name="sessions_pkey">
+    <key id="1623" parent="1460" name="sessions_pkey">
       <ObjectId>1084628</ObjectId>
       <StateNumber>28934758</StateNumber>
       <ColNames>ip
@@ -11293,47 +11300,47 @@ user_id</ColNames>
       <UnderlyingIndexName>sessions_pkey</UnderlyingIndexName>
       <Primary>1</Primary>
     </key>
-    <column id="1623" parent="1461" name="is_notified">
+    <column id="1624" parent="1461" name="is_notified">
       <Position>1</Position>
       <DataType>varchar(255)|0s</DataType>
       <StateNumber>28934759</StateNumber>
       <TypeId>1043</TypeId>
     </column>
-    <column id="1624" parent="1461" name="notification_comment">
+    <column id="1625" parent="1461" name="notification_comment">
       <Position>2</Position>
       <DataType>varchar(255)|0s</DataType>
       <StateNumber>28934759</StateNumber>
       <TypeId>1043</TypeId>
     </column>
-    <column id="1625" parent="1461" name="notification_time">
+    <column id="1626" parent="1461" name="notification_time">
       <Position>3</Position>
       <DataType>timestamp|0s</DataType>
       <NotNull>1</NotNull>
       <StateNumber>28934759</StateNumber>
       <TypeId>1114</TypeId>
     </column>
-    <column id="1626" parent="1461" name="followed_id">
+    <column id="1627" parent="1461" name="followed_id">
       <Position>4</Position>
       <DataType>bigint|0s</DataType>
       <NotNull>1</NotNull>
       <StateNumber>28934759</StateNumber>
       <TypeId>20</TypeId>
     </column>
-    <column id="1627" parent="1461" name="follower_id">
+    <column id="1628" parent="1461" name="follower_id">
       <Position>5</Position>
       <DataType>bigint|0s</DataType>
       <NotNull>1</NotNull>
       <StateNumber>28934759</StateNumber>
       <TypeId>20</TypeId>
     </column>
-    <index id="1628" parent="1461" name="subscriptions_pkey">
+    <index id="1629" parent="1461" name="subscriptions_pkey">
       <ObjectId>1084635</ObjectId>
       <StateNumber>28934759</StateNumber>
       <ColNames>followed_id
 follower_id</ColNames>
       <Unique>1</Unique>
     </index>
-    <key id="1629" parent="1461" name="subscriptions_pkey">
+    <key id="1630" parent="1461" name="subscriptions_pkey">
       <ObjectId>1084636</ObjectId>
       <StateNumber>28934759</StateNumber>
       <ColNames>followed_id
@@ -11341,41 +11348,41 @@ follower_id</ColNames>
       <UnderlyingIndexName>subscriptions_pkey</UnderlyingIndexName>
       <Primary>1</Primary>
     </key>
-    <column id="1630" parent="1462" name="telegram_user_id">
+    <column id="1631" parent="1462" name="telegram_user_id">
       <Position>1</Position>
       <DataType>bigint|0s</DataType>
       <NotNull>1</NotNull>
       <StateNumber>28934760</StateNumber>
       <TypeId>20</TypeId>
     </column>
-    <column id="1631" parent="1462" name="user_id">
+    <column id="1632" parent="1462" name="user_id">
       <Position>2</Position>
       <DataType>bigint|0s</DataType>
       <NotNull>1</NotNull>
       <StateNumber>28934760</StateNumber>
       <TypeId>20</TypeId>
     </column>
-    <column id="1632" parent="1462" name="begin_time">
+    <column id="1633" parent="1462" name="begin_time">
       <Position>3</Position>
       <DataType>timestamp|0s</DataType>
       <NotNull>1</NotNull>
       <StateNumber>28934760</StateNumber>
       <TypeId>1114</TypeId>
     </column>
-    <column id="1633" parent="1462" name="end_time">
+    <column id="1634" parent="1462" name="end_time">
       <Position>4</Position>
       <DataType>timestamp|0s</DataType>
       <StateNumber>28934760</StateNumber>
       <TypeId>1114</TypeId>
     </column>
-    <index id="1634" parent="1462" name="telegram_bindings_pkey">
+    <index id="1635" parent="1462" name="telegram_bindings_pkey">
       <ObjectId>1084640</ObjectId>
       <StateNumber>28934760</StateNumber>
       <ColNames>telegram_user_id
 user_id</ColNames>
       <Unique>1</Unique>
     </index>
-    <key id="1635" parent="1462" name="telegram_bindings_pkey">
+    <key id="1636" parent="1462" name="telegram_bindings_pkey">
       <ObjectId>1084641</ObjectId>
       <StateNumber>28934760</StateNumber>
       <ColNames>telegram_user_id
@@ -11383,41 +11390,41 @@ user_id</ColNames>
       <UnderlyingIndexName>telegram_bindings_pkey</UnderlyingIndexName>
       <Primary>1</Primary>
     </key>
-    <column id="1636" parent="1463" name="banned_user_id">
+    <column id="1637" parent="1463" name="banned_user_id">
       <Position>1</Position>
       <DataType>bigint|0s</DataType>
       <NotNull>1</NotNull>
       <StateNumber>28934761</StateNumber>
       <TypeId>20</TypeId>
     </column>
-    <column id="1637" parent="1463" name="user_id">
+    <column id="1638" parent="1463" name="user_id">
       <Position>2</Position>
       <DataType>bigint|0s</DataType>
       <NotNull>1</NotNull>
       <StateNumber>28934761</StateNumber>
       <TypeId>20</TypeId>
     </column>
-    <column id="1638" parent="1463" name="ban_id">
+    <column id="1639" parent="1463" name="ban_id">
       <Position>3</Position>
       <DataType>bigint|0s</DataType>
       <NotNull>1</NotNull>
       <StateNumber>28934761</StateNumber>
       <TypeId>20</TypeId>
     </column>
-    <index id="1639" parent="1463" name="user_user_blacklist_pkey">
+    <index id="1640" parent="1463" name="user_user_blacklist_pkey">
       <ObjectId>1084645</ObjectId>
       <StateNumber>28934761</StateNumber>
       <ColNames>banned_user_id
 user_id</ColNames>
       <Unique>1</Unique>
     </index>
-    <index id="1640" parent="1463" name="uk_gxegcd3pbev6oun0xuxu7l0jb">
+    <index id="1641" parent="1463" name="uk_gxegcd3pbev6oun0xuxu7l0jb">
       <ObjectId>1084651</ObjectId>
       <StateNumber>28934764</StateNumber>
       <ColNames>ban_id</ColNames>
       <Unique>1</Unique>
     </index>
-    <key id="1641" parent="1463" name="user_user_blacklist_pkey">
+    <key id="1642" parent="1463" name="user_user_blacklist_pkey">
       <ObjectId>1084646</ObjectId>
       <StateNumber>28934761</StateNumber>
       <ColNames>banned_user_id
@@ -11425,13 +11432,13 @@ user_id</ColNames>
       <UnderlyingIndexName>user_user_blacklist_pkey</UnderlyingIndexName>
       <Primary>1</Primary>
     </key>
-    <key id="1642" parent="1463" name="uk_gxegcd3pbev6oun0xuxu7l0jb">
+    <key id="1643" parent="1463" name="uk_gxegcd3pbev6oun0xuxu7l0jb">
       <ObjectId>1084652</ObjectId>
       <StateNumber>28934764</StateNumber>
       <ColNames>ban_id</ColNames>
       <UnderlyingIndexName>uk_gxegcd3pbev6oun0xuxu7l0jb</UnderlyingIndexName>
     </key>
-    <foreign-key id="1643" parent="1463" name="fkgb84m76qjlmowxjiw3v8eujo2">
+    <foreign-key id="1644" parent="1463" name="fkgb84m76qjlmowxjiw3v8eujo2">
       <ObjectId>1084718</ObjectId>
       <StateNumber>28934778</StateNumber>
       <ColNames>ban_id</ColNames>
@@ -11441,27 +11448,27 @@ user_id</ColNames>
       <RefKeyName>bans_pkey</RefKeyName>
       <RefColNames>id</RefColNames>
     </foreign-key>
-    <column id="1644" parent="1464" name="login">
+    <column id="1645" parent="1464" name="login">
       <Position>1</Position>
       <DataType>varchar(255)|0s</DataType>
       <NotNull>1</NotNull>
       <StateNumber>27038</StateNumber>
       <TypeId>1043</TypeId>
     </column>
-    <column id="1645" parent="1464" name="password">
+    <column id="1646" parent="1464" name="password">
       <Position>2</Position>
       <DataType>varchar(255)|0s</DataType>
       <NotNull>1</NotNull>
       <StateNumber>27038</StateNumber>
       <TypeId>1043</TypeId>
     </column>
-    <index id="1646" parent="1464" name="users_pkey">
+    <index id="1647" parent="1464" name="users_pkey">
       <ObjectId>55499</ObjectId>
       <StateNumber>27038</StateNumber>
       <ColNames>login</ColNames>
       <Unique>1</Unique>
     </index>
-    <key id="1647" parent="1464" name="users_pkey">
+    <key id="1648" parent="1464" name="users_pkey">
       <ObjectId>55500</ObjectId>
       <StateNumber>27038</StateNumber>
       <ColNames>login</ColNames>

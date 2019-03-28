@@ -37,7 +37,7 @@ public class ObjectDataForXYR
     return xyr;
   }
 
-  public java.util.Collection getAllBusses() throws java.sql.SQLException { Session session = null;
+  public java.util.Collection getAll() throws java.sql.SQLException { Session session = null;
     java.util.List xyrs = new java.util.ArrayList();
     try {
       session = HibernateUtil.getSessionFactory().openSession();
