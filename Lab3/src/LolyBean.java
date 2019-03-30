@@ -2,6 +2,7 @@
 //import com.jcraft.jsch.JSchException;
 //import com.jcraft.jsch.Session;
 import java.sql.SQLException;
+import java.sql.Timestamp;
 import java.util.ArrayList;
 import java.util.List;
 import javax.faces.bean.ManagedBean;
@@ -12,32 +13,8 @@ import org.hibernate.Session;
 public class LolyBean
 {
     static {
-        //for helios
-//        String strSshUser = "s247407";
-//        String strSshPassword = "hat507";
-//        String strSshHost = "helios.se.ifmo.ru";
-//        int nSshPort = 2222;
-//        String strRemoteHost = "pg";
-//        int nLocalPort = 63333;
-//        int nRemotePort = 5432;
-//        String strDbUser = "s247407";
-//        String strDbPassword = "hat507";
-//
-//        JSch jsch = new JSch();
-//        Session session = null;
-//        try {
-//            session = jsch.getSession(strSshUser, strSshHost, 2222);
-//            session.setPassword(strSshPassword);
-//
-//            session.setConfig("StrictHostKeyChecking", "no");
-//
-//            session.connect();
-//            System.out.println("tonnel created");
-//            session.setPortForwardingL(nLocalPort, strRemoteHost, nRemotePort);
-//        } catch (JSchException e) {
-//            e.printStackTrace();
-//        }
-            Session session = HibernateUtil.getSessionFactory().openSession();
+
+            Session session = HibernateUtil.getSessionFactory().getCurrentSession();
             session.beginTransaction();
 
     }
@@ -73,6 +50,5 @@ public class LolyBean
     public void setValues(ValueXYRFromForm values) {
         this.values = values;
     }
-
-    public LolyBean() {}
+    public LolyBean(){}
 }

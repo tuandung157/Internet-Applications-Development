@@ -1,12 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="DataSourceManagerImpl" format="xml" multifile-model="true">
-    <data-source source="LOCAL" name="@localhost" uuid="fc9056d9-166d-4bc5-85b0-7063f641c0c7">
+    <data-source source="LOCAL" name="hibernate.cfg.xml/Hibernate" uuid="cf109ada-251a-4b5f-86f7-88e31cd995ce">
       <driver-ref>oracle</driver-ref>
       <synchronize>true</synchronize>
+      <imported>true</imported>
+      <remarks>Hibernate
+
+D:/Projects/Lab3/src/hibernate.cfg.xml</remarks>
       <auto-commit>false</auto-commit>
       <jdbc-driver>oracle.jdbc.OracleDriver</jdbc-driver>
-      <jdbc-url>jdbc:oracle:thin:@//localhost:1521/oracle</jdbc-url>
+      <jdbc-url>jdbc:oracle:thin:@localhost:1521:oracle</jdbc-url>
       <driver-properties>
         <property name="v$session.program" value="DataGrip" />
       </driver-properties>

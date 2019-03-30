@@ -2,7 +2,7 @@ import org.hibernate.cfg.Configuration;
 
 public class HibernateUtil
 {
-    private static org.hibernate.SessionFactory sessionFactory;
+    private static final org.hibernate.SessionFactory sessionFactory;
 
     static {
         try {

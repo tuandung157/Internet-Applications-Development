@@ -1,4 +1,4 @@
-import java.sql.Time;
+import java.sql.Timestamp;
 import java.util.Calendar;
 
 public class ValueXYRFromForm
@@ -8,8 +8,7 @@ public class ValueXYRFromForm
   private Float y;
   private Float r = Float.valueOf(1.0F);
   private Boolean result;
-  private Time time_now;
-  private Long time_work;
+  private Timestamp time_now;
   
   public ValueXYRFromForm() {}
   
@@ -52,20 +51,12 @@ public class ValueXYRFromForm
     this.r = r;
   }
   
-  public Time getTime_now() {
+  public Timestamp getTime_now() {
     return time_now;
   }
   
-  public void setTime_now(Time time_now) {
+  public void setTime_now(Timestamp time_now) {
     this.time_now = time_now;
-  }
-  
-  public Long getTime_work() {
-    return time_work;
-  }
-  
-  public void setTime_work(Long time_work) {
-    this.time_work = time_work;
   }
   
   public void find()
@@ -85,6 +76,6 @@ public class ValueXYRFromForm
     
     result = false;
     setResult(Boolean.valueOf(result));
-    setTime_now(new Time(now));
+    setTime_now(new Timestamp(now));
   }
 }
