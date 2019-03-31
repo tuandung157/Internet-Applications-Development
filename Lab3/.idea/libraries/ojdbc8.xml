@@ -1,0 +1,17 @@
+<component name="libraryTable">
+  <library name="ojdbc8">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/Desktop/ojdbc8-full/ojdbc8-full/ojdbc8.jar!/" />
+      <root url="jar://$USER_HOME$/Desktop/ojdbc8-full/ojdbc8-full/ons.jar!/" />
+      <root url="jar://$USER_HOME$/Desktop/ojdbc8-full/ojdbc8-full/oraclepki.jar!/" />
+      <root url="jar://$USER_HOME$/Desktop/ojdbc8-full/ojdbc8-full/orai18n.jar!/" />
+      <root url="jar://$USER_HOME$/Desktop/ojdbc8-full/ojdbc8-full/osdt_cert.jar!/" />
+      <root url="jar://$USER_HOME$/Desktop/ojdbc8-full/ojdbc8-full/osdt_core.jar!/" />
+      <root url="jar://$USER_HOME$/Desktop/ojdbc8-full/ojdbc8-full/simplefan.jar!/" />
+      <root url="jar://$USER_HOME$/Desktop/ojdbc8-full/ojdbc8-full/ucp.jar!/" />
+      <root url="jar://$USER_HOME$/Desktop/ojdbc8-full/ojdbc8-full/xdb6.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

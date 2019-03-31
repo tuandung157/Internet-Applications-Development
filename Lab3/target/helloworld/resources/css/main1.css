@@ -1,0 +1,100 @@
+* {
+    font-family: Georgia, Times New Roman, serif;
+    /*fantasy, "Comic Sans MS", Sans-serif*/
+}
+
+form{
+    padding-left: 10px;
+}
+
+#newXYR{
+    border-radius: 20px 20px 20px 20px;
+    background: #8FBC8F;
+    width: 50%;
+    /*     hight: 50%; */
+    height: 300px;
+}
+
+
+
+.input{
+    padding-top: 20px;
+    padding-left: 10px;
+    padding-bottom: 10px;
+    /*     float: left; */
+}
+
+/* table{
+    float: right;
+} */
+
+canvas{
+    float: right;
+    /*     border-right: 130px; */
+    margin-right: 130px;
+    /*     pa */
+    border: 2px solid black;
+}
+
+table {
+    /*     border: 2px solid black; */
+    width: 95%;
+    border-collapse: collapse;
+}
+
+tbody {
+    border: 2px solid black;
+}
+
+thead{
+    background: #6495ED;
+}
+
+
+th{
+    height: 30px;
+    /*width: 16%;*/
+    width: 20%;
+    border: 2px solid black;
+    text-align: center;
+}
+
+td {
+    /*width: 16%;*/
+    width: 20%;
+    border: 2px solid black;
+    text-align: center;
+}
+
+#redirect{
+    /*     padding: 20px;
+        border: 2px solid black; */
+
+    margin: 20px;
+    margin-left: 580px;
+    margin-right: 580px;
+    text-align: center;
+    /*     margin-right: 30%; */
+    border: 3px solid black;
+    padding: 2px;
+    background: yellow;
+
+}
+
+
+.ui-slider{
+    margin-top: 5px;
+    width: 50%;
+}
+
+.but{
+    margin-right: 7px;
+}
+
+.check{
+    margin-left: 50%;
+}
+
+body{
+    background: url("http://cdn1.game-game.com.ua/gamesimg/39619_big.jpg") no-repeat 0 0/cover;
+}
