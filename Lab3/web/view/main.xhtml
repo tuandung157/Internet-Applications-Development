@@ -29,7 +29,7 @@
                     <div>
                     <h:outputLabel for="x" value="Input X="/>
 
-                    <h:selectOneRadio id="x" value="#{lolybean.values.x}" >
+                    <h:selectOneRadio id="x_radio" >
                         <f:selectItem itemValue= "-5" itemLabel="-5" />
                         <f:selectItem itemValue= "-4" itemLabel="-4" />
                         <f:selectItem itemValue= "-3" itemLabel="-3" />
@@ -41,7 +41,10 @@
                         <f:selectItem itemValue= "3" itemLabel="3" />
 
                     </h:selectOneRadio>
+                    <h:inputHidden id="x" value="#{lolybean.values.x}" required="true" >
+                        <f:validateDoubleRange minimum="-5" maximum="3"/>
 
+                    </h:inputHidden>
                     </div>
 
                     <div>
@@ -55,6 +58,12 @@
                     <script>
                         var inp_x = document.getElementById('newXYR:x');
                         var inp_y = document.getElementById('newXYR:y');
+                        var inp_x_radio = document.getElementById('newXYR:x_radio');
+                        inp_x_radio.onclick = function(e) {
+                            inp_x.value =document.querySelector('input[name="newXYR:x_radio"]:checked').value;
+
+                        }
+
                         inp_x.onkeyup = function(e) {
                             // e = e || event;
                             if (e.keyCode == 13) {
@@ -82,9 +91,9 @@
                     </div>
 
                     <div>
-                        <h:commandButton id="check" class="check" value="Check" action="#{lolybean.addXYR}">
-                            <f:ajax execute="newXYR" render="XYRTable"/>
-                        </h:commandButton>
+                        <p:commandButton id="check" class="check" value="Check" action="#{lolybean.addXYR}">
+                            <f:ajax execute="newXYR" render="XYRTable" delay="100"/>
+                        </p:commandButton>
                     </div>
                 </h:form>
 

@@ -5,6 +5,7 @@ import java.sql.SQLException;
 import java.sql.Timestamp;
 import java.util.ArrayList;
 import java.util.List;
+import javax.ejb.EJB;
 import javax.faces.bean.ManagedBean;
 import org.hibernate.Session;
 
@@ -13,26 +14,27 @@ import org.hibernate.Session;
 public class LolyBean
 {
     static {
-
             Session session = HibernateUtil.getSessionFactory().getCurrentSession();
             session.beginTransaction();
 
     }
-
     private ValueXYRFromForm values = new ValueXYRFromForm();
     private List<ValueXYRFromForm> list_with_values = new ArrayList();
 
     public void addXYR() {
-        values.find();
-        list_with_values.add(values);
+
         try
         {
+            values.find();
+            list_with_values.add(values);
             new ObjectDataForXYR().addXYR(values);
+            values = new ValueXYRFromForm();
         } catch (SQLException e) {
             e.printStackTrace();
+            values = new ValueXYRFromForm();
         }
 
-        values = new ValueXYRFromForm();
+
     }
 
     public List<ValueXYRFromForm> getList_with_values() {
