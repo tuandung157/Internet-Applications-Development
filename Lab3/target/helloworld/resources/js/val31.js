@@ -202,7 +202,7 @@ function drawPoint(x,y,r){
 function isArea(x, y, r) {
     if((y <= r)&&(y >= 0)&&(x >= -r/2)&&(x <= 0))
         return true;
-    else if((x >= 0)&&(y > 0)&&(Math.sqrt(x*x +y*y) <= r))
+    else if((x >= 0)&&(y >= 0)&&(Math.sqrt(x*x +y*y) <=r/2))
         return true;
     else if((x >= 0)&&y <= 0&&((Math.abs(x)+Math.abs(y)) <= r))
         return true;
