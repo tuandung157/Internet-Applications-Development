@@ -13,7 +13,7 @@
     <!--<h:outputStylesheet library="css" name="main1.css"/>-->
     <h:outputScript library="js" name="val31.js"/>
     <h:outputScript library="js" name="main.js"/>
-
+    <h:outputScript library="primefaces" name ="jquery/jquery.js" target="head"/>
 </h:head>
 <h:body onload="init()">
     <div id="header">
@@ -41,7 +41,7 @@
                         <f:selectItem itemValue= "3" itemLabel="3" />
 
                     </h:selectOneRadio>
-                    <h:inputHidden id="x" value="#{lolybean.values.x}" required="true" >
+                    <h:inputHidden id="x" value="#{pointbean.values.x}" required="true" >
                         <f:validateDoubleRange minimum="-5" maximum="3"/>
 
                     </h:inputHidden>
@@ -49,9 +49,9 @@
 
                     <div>
                         <h:outputLabel for="y" value="Input Y"/>
-                        <h:inputText id="y" value="#{lolybean.values.y}" required="true" label="Y">
+                        <h:inputText id="y" value="#{pointbean.values.y}" required="true" label="Y">
+                            <!--<f:validateRegex pattern="-?(\d{1,2})(\.\d{0,3})?"/>-->
                             <f:validateDoubleRange minimum="-5" maximum="3"/>
-
                         </h:inputText>
                         <h:message for="y" style="color:red"/>
                     </div>
@@ -79,30 +79,28 @@
                     </script>
                     <div>
                         <h:outputLabel value ="Input R: "/>
-                        <h:selectOneMenu onchange="drawCanvas('canvas',document.getElementById('newXYR:r').value)" value="#{lolybean.values.r}" id="r">
+                        <h:selectOneMenu onchange="drawCanvas('canvas',parseFloat(document.getElementById('newXYR:r').value))" value="#{pointbean.values.r}" id="r">
                             <f:selectItem itemValue="1" itemLabel="1"/>
                             <f:selectItem itemValue= "2" itemLabel="2" />
                             <f:selectItem itemValue= "3" itemLabel="3" />
                             <f:selectItem itemValue= "4" itemLabel="4" />
                             <f:selectItem itemValue= "5" itemLabel="5" />
                         </h:selectOneMenu>
-
-
                     </div>
 
                     <div>
-                        <p:commandButton id="check" class="check" value="Check" action="#{lolybean.addXYR}">
+                        <p:commandButton id="check" onclick="check_value()" class="check" value="Check" actionListener="#{pointbean.addXYR}" process="@form"> <!--  -->
                             <f:ajax execute="newXYR" render="XYRTable" delay="100"/>
                         </p:commandButton>
                     </div>
                 </h:form>
-
-                <!--<h:form id="redirect">-->
-                    <!--<h:commandButton value="Restart" action="start" />-->
-                <!--</h:form>-->
+                    <br> </br>
+                <h:form id="redirect">
+                    <h:commandButton value="reset" action="start" />
+                </h:form>
 
                 <h:panelGroup id="XYRTable">
-                    <h:dataTable value="#{lolybean.list_with_values}" var="values">
+                    <h:dataTable value="#{pointbean.list_with_values}" var="values">
                         <h:column>
                             <f:facet name="header">X</f:facet>
                             #{values.x}
@@ -129,11 +127,36 @@
                         </h:column>
                     </h:dataTable>
                 </h:panelGroup>
+                <script>
+                    var points = [
+                       <ui:repeat var="val" value="#{pointbean.list_with_values}">
+                            {x:#{val.x},y:#{val.y}},
+                        </ui:repeat>
 
+                    ]
+                </script>
             </div>
         </div>
     </div>
-
+<!--    <script type="text/javascript">-->
+<!--        var _form = $('#canvas');-->
+<!--        _form.click(function () {-->
+<!--            $.ajax({-->
+<!--                type: "POST",-->
+<!--                url: ,-->
+<!--                data : {-->
+<!--                    valueX : $("#x").val(),-->
+<!--                    valueY : $("#y").val(),-->
+<!--                    valueR : $("#r").val()-->
+<!--                },-->
+<!--                success: function (data) {-->
+<!--                    // $('#test').attr("value",data);-->
+<!--                    // $('thanhcong').html("Enjoy your result!")-->
+<!--                }-->
+<!--            });-->
+<!--            return false;-->
+<!--        });-->
+<!--    </script>-->
 
 
 </h:body>
