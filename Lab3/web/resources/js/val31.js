@@ -32,14 +32,16 @@
 //     var error = document.getElementById("error");
 //     error.innerHTML = "<br/>";
 // };
-var r = 1;
+var cur_r = 3;
 
 function init(){
-    drawCanvas('canvas',r);
+    cur_r = document.getElementById('newXYR:r').value;
+    drawCanvas('canvas',cur_r);
+
 }
 
 function drawCanvas(id, r){
-    this.r = r;
+    // this.r = r;
     var canvas = document.getElementById(id),
         context = canvas.getContext("2d");
 //clean
@@ -154,6 +156,11 @@ function drawCanvas(id, r){
     context.strokeStyle = "black";
     context.fillStyle = "black";
     context.stroke();
+
+
+    for(var i = 0;i<points.length;i++){
+        drawPoint(points[i].x,points[i].y,r);
+    }
 }
 
 function clickCanvas(){
@@ -165,16 +172,13 @@ function clickCanvas(){
     var x = event.clientX-left;
     var y = event.clientY-top;
     var size = canvas.height;
-    if (r>0) {
-        x = Math.round((x - size / 2) * r * 10 / 2 / 65) / 10;
-        y = Math.round((-y + size / 2) * r * 10 / 2 / 65) / 10;
-        drawCanvas('canvas', r);
-        //     document.getElementById("form:x_hidden").value = x;
-        //     document.getElementById("form:Y").value = y;
-        //     yVal = y;
-        //     alert(x);
-        drawPoint(x, y, r);
-        //     document.getElementById('form:validationButton').click();
+    if (cur_r>0) {
+        x = Math.round((x - size / 2) * cur_r * 10 / 2 / 65) / 10;
+        y = Math.round((-y + size / 2) * cur_r * 10 / 2 / 65) / 10;
+        points.push({x:x,y:y});
+        drawCanvas('canvas', cur_r);
+
+        //drawPoint(x, y, cur_r);
         document.getElementById('newXYR:y').value=y;
         document.getElementById('newXYR:x').value=x;
 
@@ -197,6 +201,10 @@ function drawPoint(x,y,r){
     ctx.fillStyle = color;
     ctx.fill();
     ctx.closePath();
+
+    document.getElementById("newXYR:x").value = ((x-150)/130) * r;
+    document.getElementById('newXYR:y').value = ((150-y)/130) * r;
+
 }
 
 function isArea(x, y, r) {
@@ -207,4 +215,15 @@ function isArea(x, y, r) {
     else if((x >= 0)&&y <= 0&&((Math.abs(x)+Math.abs(y)) <= r))
         return true;
     return false;
+}
+
+function check_value(){
+    var test_Y = document.getElementById('newXYR:y').value;
+    if ((isNaN(test_Y)) || (test_Y < -5) || (test_Y > 3)){
+        document.getElementById('newXYR:y').style.boxShadow = "0 0 10px red";
+        event.preventDefault();
+    }
+    else{
+        document.getElementById('newXYR:y').style.boxShadow = "0 0 10px white";
+    }
 }

@@ -8,9 +8,10 @@ $(document).ready(function () {
             now.getMonth()+1,
             now.getFullYear()].join('.');
         document.getElementById('time').innerHTML = [time, date].join(' | ');
-        setTimeout(updateClock, 12000);
+        setTimeout(updateClock, 6000);
     }
 
     updateClock();
     document.getElementById("infoR")
 });
+

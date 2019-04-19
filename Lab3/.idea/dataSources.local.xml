@@ -10,5 +10,24 @@
       <user-name>SYSTEM</user-name>
       <introspection-schemas>*:@,PUBLIC</introspection-schemas>
     </data-source>
+    <data-source name="@localhost" uuid="5b4921cc-c349-4998-9501-44068efef8fd">
+      <database-info product="Oracle" version="Oracle Database 18c Enterprise Edition Release 18.0.0.0.0 - Production" jdbc-version="4.0" driver-name="Oracle JDBC driver" driver-version="12.1.0.2.0" dbms="ORACLE" exact-version="18.0.0.0.0" exact-driver-version="12.1">
+        <extra-name-characters>$#</extra-name-characters>
+        <identifier-quote-string>&quot;</identifier-quote-string>
+      </database-info>
+      <case-sensitivity plain-identifiers="upper" quoted-identifiers="exact" />
+      <secret-storage>master_key</secret-storage>
+      <user-name>SYSTEM</user-name>
+      <introspection-schemas>*:@,PUBLIC</introspection-schemas>
+      <ssh-properties>
+        <enabled>false</enabled>
+        <proxy-host>helios.cs.ifmo.ru</proxy-host>
+        <proxy-port>2222</proxy-port>
+        <secret-storage>master_key</secret-storage>
+        <user>s247407</user>
+        <use-password>true</use-password>
+        <auth-type>PASSWORD</auth-type>
+      </ssh-properties>
+    </data-source>
   </component>
 </project>
