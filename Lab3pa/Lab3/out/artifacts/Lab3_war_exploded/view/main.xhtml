@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"-->
+        <!--"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">-->
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:p="http://primefaces.org/ui">
+
+<h:head>
+   <h:outputScript library="js" name = "script.js" target="head"/>
+   <h:outputStylesheet library="css" name = "style.css" />
+
+   <title>lab 3</title>
+</h:head>
+
+<h:body onload="init()">
+
+   <canvas id="canvas" onclick="clickCanvas()" style="background:#FFFFFF; border-radius: 20px;" width="300" height="300"/>
+       <h:form id="newXYR">
+
+        <p id="block_x" >input x: <br/>
+         <p:commandButton value="-2"   name="X" onclick="event.preventDefault(),changeX(-2),buttonX_pressed(this)"/>
+         <p:commandButton value="-1.5" name="X" onclick="event.preventDefault(),changeX(-1.5),buttonX_pressed(this)"/>
+         <p:commandButton value="-1"   name="X" onclick="event.preventDefault(),changeX(-1),buttonX_pressed(this)"/>
+           <br/>
+         <p:commandButton value="-0.5" name="X" onclick="event.preventDefault(),changeX(-0.5),buttonX_pressed(this)"/>
+         <p:commandButton value="0"    name="X" onclick="event.preventDefault(),changeX(0),buttonX_pressed(this)"/>
+         <p:commandButton value="0.5"  name="X" onclick="event.preventDefault(),changeX(0.5),buttonX_pressed(this)"/>
+           <br/>
+         <p:commandButton value="1"    name="X" onclick="event.preventDefault(),changeX(1),buttonX_pressed(this)"/>
+         <p:commandButton value="1.5"  name="X" onclick="event.preventDefault(),changeX(1.5),buttonX_pressed(this)"/>
+         <p:commandButton value="2"    name="X" onclick="event.preventDefault(),changeX(2),buttonX_pressed(this)"/>
+        </p>
+
+        <p id = "block_y">input y: <br/>
+          <p:inputText id="text_y"
+                       type ="text"
+                       name="Y"
+                       placeholder="{-3;3}"
+                       required="true"
+                       onchange="changeY()"
+                       value="#{YValidator.fieldText}"
+          >
+                <p:ajax event="keyup" update="outY"/>
+          </p:inputText>
+            <br/>
+            <h:outputText rendered="true" id="outY" value="#{YValidator.validation}"/>
+        </p>
+
+        <!--<p id = "block_r"> input R:<br/>-->
+            <!--<h:selectOneRadio id="r" >-->
+            <!--<f:selectItem itemValue="1" value="1"/>-->
+            <!--<f:selectItem itemValue="2" value="2"/>-->
+            <!--<f:selectItem itemValue="3" value="3"/>-->
+        <!--</h:selectOneRadio>-->
+        <!--</p>-->
+   </h:form>
+
+</h:body>
+</html>
